@@ -1,1 +1,1 @@
-web: java -jar target/dagenslunch-1.1.0-SNAPSHOT.jar server config.ym
+web: java -jar target/dagenslunch-1.1.0-SNAPSHOT.jar server config.yml
