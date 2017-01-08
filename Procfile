@@ -1,1 +1,1 @@
-web: java -jar target/dagenslunch-1.1.0-SNAPSHOT.jar server config.yml
+web: java $JAVA_OPTS -Ddw.http.port=$PORT -Ddw.http.adminPort=$PORT java -jar target/dagenslunch-1.1.0-SNAPSHOT.jar server config.yml
