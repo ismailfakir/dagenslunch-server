@@ -1,0 +1,57 @@
+template: Hello, %s!
+
+defaultName: ${DW_DEFAULT_NAME:-cloudcentrik-developer}
+
+  
+  
+  
+
+# Database settings.
+database:
+
+  # the name of your JDBC driver
+  #driverClass: org.h2.Driver
+  driverClass: org.postgresql.Driver
+
+  # the username
+  #user: sa
+  #user: dagenslunch_admin
+  user: iamvvnxr
+
+  # the password
+  #password: sa
+  #password: open123
+  password: aWFAbTABGHuLg3zC3IHkMZxu0fKhClOh
+
+  # the JDBC URL
+  #url: jdbc:h2:./target/example
+  #url: jdbc:postgresql://localhost:5432/dagenslunchdb
+  url: jdbc:postgres://horton.elephantsql.com:5432/iamvvnxr
+  
+  properties:
+    charSet: UTF-8
+    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+
+# use the simple server factory if you only want to run on a single port
+server:
+  type: simple
+  connector:
+    type: http
+    port: 9090
+    
+
+# Logging settings.
+logging:
+  level: INFO
+  appenders:
+    - type: console
+      threshold: ALL
+      timeZone: UTC
+      target: stdout
+      logFormat: # TODO
+
+#commandline commands
+#data migration
+#java -jar target/dagenslunch-1.1.0-SNAPSHOT.jar db migrate config.yml
+#running server
+#java -jar target/dagenslunch-1.1.0-SNAPSHOT.jar server config.yml
