@@ -16,7 +16,7 @@ public class PersonDAO extends AbstractDAO<Person> {
         return Optional.ofNullable(get(id));
     }
     
-    public Person findById(int id) {
+    public Person findByLongId(Long id) {
         return (Person) currentSession().get(Person.class, id);
     }
 
