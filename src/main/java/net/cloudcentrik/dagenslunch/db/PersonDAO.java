@@ -15,6 +15,10 @@ public class PersonDAO extends AbstractDAO<Person> {
     public Optional<Person> findById(Long id) {
         return Optional.ofNullable(get(id));
     }
+    
+    public Person findById(int id) {
+        return (Person) currentSession().get(Person.class, id);
+    }
 
     public Person create(Person person) {
         return persist(person);
@@ -24,7 +28,7 @@ public class PersonDAO extends AbstractDAO<Person> {
         return list(namedQuery("net.cloudcentrik.dagenslunch.core.Person.findAll"));
     }
     
-    public void delete(Optional<Person> person) {
+    public void delete(Person person) {
         currentSession().delete(person);
     }
     

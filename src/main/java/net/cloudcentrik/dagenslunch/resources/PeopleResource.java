@@ -58,7 +58,7 @@ public class PeopleResource {
     @DELETE
     @Path("/{id}")
     @UnitOfWork
-    public void delete(@PathParam("id") Long id) {
+    public void delete(@PathParam("id") int id) {
     	peopleDAO.delete(peopleDAO.findById(id));
     }
 
