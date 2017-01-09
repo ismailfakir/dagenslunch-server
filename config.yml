@@ -6,27 +6,27 @@ defaultName: ${DW_DEFAULT_NAME:-cloudcentrik-developer}
 database:
 
   # the name of your JDBC driver
-  driverClass: org.h2.Driver
-  #driverClass: org.postgresql.Driver
+  #driverClass: org.h2.Driver
+  driverClass: org.postgresql.Driver
 
   # the username
-  user: sa
+  #user: sa
   #user: dagenslunch_admin
-  #user: iamvvnxr
+  user: ${JDBC_DATABASE_USERNAME}
 
   # the password
-  password: sa
+  #password: sa
   #password: open123
-  #password: aWFAbTABGHuLg3zC3IHkMZxu0fKhClOh
+  password: ${JDBC_DATABASE_PASSWORD}
 
   # the JDBC URL
-  url: jdbc:h2:./target/example
+  #url: jdbc:h2:./target/example
   #url: jdbc:postgresql://localhost:5432/dagenslunchdb
-  #url: jdbc:postgres://horton.elephantsql.com:5432/iamvvnxr
+  url: ${JDBC_DATABASE_URL}
   
-  #properties:
-    #charSet: UTF-8
-    #hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+  properties:
+    charSet: UTF-8
+    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
 
 # use the simple server factory if you only want to run on a single port
 server:
