@@ -1,0 +1,21 @@
+Heroku
+
+$ Heroku login	-> login in heroku from commandline
+$ Heroku logout	-> logout in heroku from commandline
+
+$ heroku info	-> Runing server information
+$ heroku run echo \$JDBC_DATABASE_URL -> jdbc url for postgresql database
+
+$ git add .
+$ git commit -m "Demo"
+$ git push heroku master	-> pushing git repository in heroku
+$ heroku local web	-> run app locally
+$ heroku ps:scale web=1	-> running the app in heroku
+$ heroku open	-> test the app
+$ heroku logs --tail	-> check server logs
+$ heroku ps	-> checking running process
+$ heroku config -> server configuration
+
+
+Connecting to a database remotely:
+jdbc:postgresql://<host>:<port>/<dbname>?sslmode=require&user=<username>&password=<password>

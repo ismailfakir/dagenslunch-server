@@ -43,8 +43,9 @@ public class Person {
         return id;
     }
 
-    public void setId(long id) {
+    public Person setId(long id) {
         this.id = id;
+        return this;
     }
 
     public String getFullName() {

@@ -23,4 +23,12 @@ public class PersonDAO extends AbstractDAO<Person> {
     public List<Person> findAll() {
         return list(namedQuery("net.cloudcentrik.dagenslunch.core.Person.findAll"));
     }
+    
+    public void delete(Optional<Person> person) {
+        currentSession().delete(person);
+    }
+    
+    public void update(Person person) {
+        currentSession().saveOrUpdate(person);
+    }
 }
