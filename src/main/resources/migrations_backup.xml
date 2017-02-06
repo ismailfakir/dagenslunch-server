@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="ismail">
+        <createTable tableName="people">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="full_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="job_title" type="varchar(255)"/>
+        </createTable>
+    </changeSet>
+    
+    <changeSet id="2" author="ismail">
+        <createTable tableName="restaurant">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="telephone" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="openingHours" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="catagory" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rating" type="tinyint"/>
+            <column name="active" type="boolean" defaultValue="false"/>
+            <column name="validityDate" type="date"/>  
+        </createTable>
+    </changeSet>
+    
+    <changeSet id="3" author="ismail">
+        <createTable tableName="address">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="street" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="postCode" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="city" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="country" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="latitude" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="longitude" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="restaurantId" type="int">
+                <constraints nullable="false" foreignKeyName="fkRestaurantId" references="restaurant(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="liquibase-docs" id="dropTable-restaurant">
+    <dropTable cascadeConstraints="true"
+            catalogName="dagenslunchdb"
+            schemaName="public"
+            tableName="restaurant"/>
+	</changeSet>
+	<changeSet author="liquibase-docs" id="dropTable-address">
+    <dropTable cascadeConstraints="true"
+            catalogName="dagenslunchdb"
+            schemaName="public"
+            tableName="address"/>
+	</changeSet>
+	
+	<changeSet id="create-restaurant-new" author="ismail">
+        <createTable tableName="restaurant">
+            
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="latitude" type="double">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="longitude" type="double">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="street" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="post_code" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="city" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="country" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="telephone" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="opening_hours" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="category" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rating" type="tinyint"/>
+            <column name="active" type="boolean" defaultValue="false"/>
+            <column name="validity_date" type="date"/>  
+        </createTable>
+    </changeSet>
+    
+</databaseChangeLog>

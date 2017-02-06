@@ -17,4 +17,61 @@
             <column name="job_title" type="varchar(255)"/>
         </createTable>
     </changeSet>
+    
+    <changeSet id="create-restaurant-new" author="ismail">
+        <createTable tableName="restaurant">
+            
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="latitude" type="double">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="longitude" type="double">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="street" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="post_code" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="city" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="country" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="telephone" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="opening_hours" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="category" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rating" type="tinyint"/>
+            <column name="active" type="boolean" defaultValue="false"/>
+            <column name="validity_date" type="date"/>  
+        </createTable>
+    </changeSet>
+    
 </databaseChangeLog>
