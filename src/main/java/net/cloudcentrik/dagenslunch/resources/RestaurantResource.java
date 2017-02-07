@@ -15,6 +15,7 @@ import javax.ws.rs.core.MediaType;
 
 import io.dropwizard.hibernate.UnitOfWork;
 import net.cloudcentrik.dagenslunch.core.Restaurant;
+import net.cloudcentrik.dagenslunch.core.RetaurantBasicResult;
 import net.cloudcentrik.dagenslunch.db.RestaurantDAO;
 
 @Path("/restaurant")
@@ -37,6 +38,13 @@ public class RestaurantResource {
     @UnitOfWork
     public List<Restaurant> listRestaurant() {
         return restaurantDAO.findAll();
+    }
+    
+    @GET
+    @Path("/basic")
+    @UnitOfWork
+    public List<RetaurantBasicResult> listBasicRestaurant(){
+        return restaurantDAO.findAllBasic();
     }
     
     @GET

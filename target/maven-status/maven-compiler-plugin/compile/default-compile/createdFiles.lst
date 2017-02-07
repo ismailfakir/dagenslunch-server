@@ -10,5 +10,6 @@ net/cloudcentrik/dagenslunch/resources/RestaurantResource.class
 net/cloudcentrik/dagenslunch/resources/PeopleResource.class
 net/cloudcentrik/dagenslunch/DagenslunchApplication.class
 net/cloudcentrik/dagenslunch/DagenslunchConfiguration.class
+net/cloudcentrik/dagenslunch/core/RetaurantBasicResult.class
 net/cloudcentrik/dagenslunch/api/Grettings.class
 net/cloudcentrik/dagenslunch/DagenslunchApplication$1.class
