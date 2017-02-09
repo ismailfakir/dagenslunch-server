@@ -1,15 +1,24 @@
 package net.cloudcentrik.dagenslunch;
 
+import net.cloudcentrik.dagenslunch.auth.AppAuthorizer;
+import net.cloudcentrik.dagenslunch.auth.AppBasicAuthenticator;
 import net.cloudcentrik.dagenslunch.core.Person;
 import net.cloudcentrik.dagenslunch.core.Restaurant;
 import net.cloudcentrik.dagenslunch.core.Template;
+import net.cloudcentrik.dagenslunch.core.User;
 import net.cloudcentrik.dagenslunch.db.PersonDAO;
 import net.cloudcentrik.dagenslunch.db.RestaurantDAO;
 import net.cloudcentrik.dagenslunch.health.TemplateHealthCheck;
 import net.cloudcentrik.dagenslunch.resources.GrettingsResource;
 import net.cloudcentrik.dagenslunch.resources.PeopleResource;
 import net.cloudcentrik.dagenslunch.resources.RestaurantResource;
+
+import org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature;
+
 import io.dropwizard.Application;
+import io.dropwizard.auth.AuthDynamicFeature;
+import io.dropwizard.auth.AuthValueFactoryProvider;
+import io.dropwizard.auth.basic.BasicCredentialAuthFilter;
 import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
 import io.dropwizard.configuration.SubstitutingSourceProvider;
 import io.dropwizard.db.DataSourceFactory;
@@ -57,6 +66,15 @@ public class DagenslunchApplication extends Application<DagenslunchConfiguration
 		final PersonDAO dao = new PersonDAO(hibernateBundle.getSessionFactory());
 		final RestaurantDAO restaurantDao = new RestaurantDAO(hibernateBundle.getSessionFactory());
 
+		//basic authentication
+		environment.jersey().register(new AuthDynamicFeature(new BasicCredentialAuthFilter.Builder<User>()
+                .setAuthenticator(new AppBasicAuthenticator())
+                .setAuthorizer(new AppAuthorizer())
+                .setRealm("SUPER SECRET STUFF")
+                .buildAuthFilter()));
+        environment.jersey().register(new AuthValueFactoryProvider.Binder<>(User.class));
+        environment.jersey().register(RolesAllowedDynamicFeature.class);
+		
 		final Template template = configuration.buildTemplate();
 		environment.healthChecks().register("template", new TemplateHealthCheck(template));
 		environment.jersey().register(new PeopleResource(dao));
@@ -66,6 +84,8 @@ public class DagenslunchApplication extends Application<DagenslunchConfiguration
 
 		final GrettingsResource grettings = new GrettingsResource();
 		environment.jersey().register(grettings);
+		
+		
 
 	}
 }

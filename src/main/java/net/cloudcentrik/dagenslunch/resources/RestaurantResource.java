@@ -3,6 +3,7 @@ package net.cloudcentrik.dagenslunch.resources;
 import java.util.List;
 import java.util.Optional;
 
+import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -14,6 +15,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import io.dropwizard.hibernate.UnitOfWork;
+import net.cloudcentrik.dagenslunch.auth.DagenslunchCredential;
 import net.cloudcentrik.dagenslunch.core.Restaurant;
 import net.cloudcentrik.dagenslunch.core.RetaurantBasicResult;
 import net.cloudcentrik.dagenslunch.db.RestaurantDAO;
@@ -40,6 +42,7 @@ public class RestaurantResource {
         return restaurantDAO.findAll();
     }
     
+    @RolesAllowed({ DagenslunchCredential.USER_ROLE })
     @GET
     @Path("/basic")
     @UnitOfWork
