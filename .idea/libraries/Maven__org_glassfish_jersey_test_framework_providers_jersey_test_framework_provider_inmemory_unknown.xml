@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-inmemory:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/test-framework/providers/jersey-test-framework-provider-inmemory/unknown/jersey-test-framework-provider-inmemory-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/test-framework/providers/jersey-test-framework-provider-inmemory/unknown/jersey-test-framework-provider-inmemory-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/test-framework/providers/jersey-test-framework-provider-inmemory/unknown/jersey-test-framework-provider-inmemory-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

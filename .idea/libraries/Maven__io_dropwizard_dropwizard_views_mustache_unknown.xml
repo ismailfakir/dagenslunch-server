@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.dropwizard:dropwizard-views-mustache:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-views-mustache/unknown/dropwizard-views-mustache-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-views-mustache/unknown/dropwizard-views-mustache-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-views-mustache/unknown/dropwizard-views-mustache-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

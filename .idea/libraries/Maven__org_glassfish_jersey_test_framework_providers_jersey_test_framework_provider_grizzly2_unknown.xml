@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-grizzly2:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/test-framework/providers/jersey-test-framework-provider-grizzly2/unknown/jersey-test-framework-provider-grizzly2-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/test-framework/providers/jersey-test-framework-provider-grizzly2/unknown/jersey-test-framework-provider-grizzly2-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/test-framework/providers/jersey-test-framework-provider-grizzly2/unknown/jersey-test-framework-provider-grizzly2-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

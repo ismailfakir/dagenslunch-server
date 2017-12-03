@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.dropwizard:dropwizard-auth:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-auth/unknown/dropwizard-auth-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-auth/unknown/dropwizard-auth-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/dropwizard/dropwizard-auth/unknown/dropwizard-auth-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
