@@ -25,10 +25,12 @@ public class GrettingsResource {
     @Timed
     public Grettings sendGrettings(@Context HttpServletRequest req) {
 		final HashMap<String,String> serverInfo=new HashMap<String,String>();
-		serverInfo.put("name","dagenslunch");
-		serverInfo.put("version","1.0");
-		serverInfo.put("your ip",req.getRemoteAddr());
-		
+		serverInfo.put("SERVER","dagenslunch");
+		serverInfo.put("VERSION","1.0");
+		serverInfo.put("FORMAT","JSON");
+		serverInfo.put("BASE URL","https://dagens-lunch-v1.herokuapp.com/");
+		serverInfo.put("GET RESTAURANT","BASE_URL/restaurant");
+		serverInfo.put("GET RESTAURANT","BASE_URL/restaurant/basic");
         return new Grettings(serverInfo);
     }
 

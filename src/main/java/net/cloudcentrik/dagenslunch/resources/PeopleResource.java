@@ -1,7 +1,8 @@
 package net.cloudcentrik.dagenslunch.resources;
 
-import net.cloudcentrik.dagenslunch.core.Person;
-import net.cloudcentrik.dagenslunch.db.PersonDAO;
+import net.cloudcentrik.dagenslunch.auth.DagenslunchAuthenticator;
+import net.cloudcentrik.dagenslunch.core.People;
+import net.cloudcentrik.dagenslunch.db.PeopleDAO;
 import io.dropwizard.hibernate.UnitOfWork;
 
 import javax.validation.Valid;
@@ -16,39 +17,40 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 import java.util.Optional;
 
+//@DagenslunchAuthenticator
 @Path("/people")
 @Produces(MediaType.APPLICATION_JSON)
 public class PeopleResource {
 
-    private final PersonDAO peopleDAO;
+    private final PeopleDAO peopleDAO;
 
-    public PeopleResource(PersonDAO peopleDAO) {
+    public PeopleResource(PeopleDAO peopleDAO) {
         this.peopleDAO = peopleDAO;
     }
 
     @POST
     @UnitOfWork
-    public Person createPerson(Person person) {
+    public People createPerson(People person) {
         return peopleDAO.create(person);
     }
 
     @GET
     @UnitOfWork
-    public List<Person> listPeople() {
+    public List<People> listPeople() {
         return peopleDAO.findAll();
     }
     
     @GET
     @Path("/{id}")
     @UnitOfWork
-    public Optional<Person> get(@PathParam("id") Long id){
+    public Optional<People> get(@PathParam("id") Long id){
         return peopleDAO.findById(id);
     }
     
     @PUT
     @Path("/{id}")
     @UnitOfWork
-    public Person update(@PathParam("id") Long id, @Valid Person person) {
+    public People update(@PathParam("id") Long id, @Valid People person) {
         person = person.setId(id);
         peopleDAO.update(person);
 

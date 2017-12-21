@@ -2,16 +2,21 @@ package net.cloudcentrik.dagenslunch;
 
 import net.cloudcentrik.dagenslunch.auth.AppAuthorizer;
 import net.cloudcentrik.dagenslunch.auth.AppBasicAuthenticator;
-import net.cloudcentrik.dagenslunch.core.Person;
+import net.cloudcentrik.dagenslunch.auth.DagenslunchAuthenticateFilter;
+import net.cloudcentrik.dagenslunch.core.People;
 import net.cloudcentrik.dagenslunch.core.Restaurant;
 import net.cloudcentrik.dagenslunch.core.Template;
+import net.cloudcentrik.dagenslunch.core.Token;
 import net.cloudcentrik.dagenslunch.core.User;
-import net.cloudcentrik.dagenslunch.db.PersonDAO;
+
+import net.cloudcentrik.dagenslunch.db.PeopleDAO;
 import net.cloudcentrik.dagenslunch.db.RestaurantDAO;
+import net.cloudcentrik.dagenslunch.db.TokenDAO;
 import net.cloudcentrik.dagenslunch.health.TemplateHealthCheck;
 import net.cloudcentrik.dagenslunch.resources.GrettingsResource;
 import net.cloudcentrik.dagenslunch.resources.PeopleResource;
 import net.cloudcentrik.dagenslunch.resources.RestaurantResource;
+import net.cloudcentrik.dagenslunch.resources.TokenResource;
 
 import org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature;
 
@@ -33,7 +38,7 @@ public class DagenslunchApplication extends Application<DagenslunchConfiguration
 	}
 
 	private final HibernateBundle<DagenslunchConfiguration> hibernateBundle = new HibernateBundle<DagenslunchConfiguration>(
-			Person.class,Restaurant.class) {
+			People.class,Restaurant.class,Token.class) {
 		@Override
 		public DataSourceFactory getDataSourceFactory(DagenslunchConfiguration configuration) {
 			return configuration.getDataSourceFactory();
@@ -63,8 +68,9 @@ public class DagenslunchApplication extends Application<DagenslunchConfiguration
 
 	@Override
 	public void run(DagenslunchConfiguration configuration, Environment environment) {
-		final PersonDAO dao = new PersonDAO(hibernateBundle.getSessionFactory());
+		final PeopleDAO dao = new PeopleDAO(hibernateBundle.getSessionFactory());
 		final RestaurantDAO restaurantDao = new RestaurantDAO(hibernateBundle.getSessionFactory());
+		final TokenDAO tokenDao = new TokenDAO(hibernateBundle.getSessionFactory());
 
 		//basic authentication
 		environment.jersey().register(new AuthDynamicFeature(new BasicCredentialAuthFilter.Builder<User>()
@@ -74,7 +80,10 @@ public class DagenslunchApplication extends Application<DagenslunchConfiguration
                 .buildAuthFilter()));
         environment.jersey().register(new AuthValueFactoryProvider.Binder<>(User.class));
         environment.jersey().register(RolesAllowedDynamicFeature.class);
-		
+        
+        //token authentication
+        environment.jersey().register(DagenslunchAuthenticateFilter.class);
+        
 		final Template template = configuration.buildTemplate();
 		environment.healthChecks().register("template", new TemplateHealthCheck(template));
 		environment.jersey().register(new PeopleResource(dao));
@@ -85,7 +94,11 @@ public class DagenslunchApplication extends Application<DagenslunchConfiguration
 		final GrettingsResource grettings = new GrettingsResource();
 		environment.jersey().register(grettings);
 		
+		//send token
+		//final AccessResource tokenResource = new AccessResource();
+		//environment.jersey().register(tokenResource);
+		final TokenResource tokenResource = new TokenResource(tokenDao);
+		environment.jersey().register(tokenResource);
 		
-
 	}
 }

@@ -13,7 +13,7 @@ public class Template {
         this.defaultName = defaultName;
     }
 
-    public String render(Optional<String> name) {
-        return format(content, name.orElse(defaultName));
+    public String render(Optional<Object> optional) {
+        return format(content, optional.orElse(defaultName));
     }
 }

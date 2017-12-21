@@ -6,9 +6,9 @@
     <session-factory name="dagenslunch">
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.password">open123</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/dagenslunchdb</property>
-        <property name="hibernate.connection.username">dagenslunch_admin</property>
-        <property name="hibernate.default_schema">dagenslunchdb</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://127.0.0.1:5432/dagenslunch</property>
+        <property name="hibernate.connection.username">dagenslunch</property>
+        <property name="hibernate.default_schema">public</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
     </session-factory>
 </hibernate-configuration>
