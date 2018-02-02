@@ -26,6 +26,8 @@ database:
   
   properties:
     charSet: UTF-8
+    characterEncoding: UTF-8
+    useUnicode: true
     hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
 
 # use the simple server factory if you only want to run on a single port
@@ -43,19 +45,22 @@ logging:
   level: INFO
   loggers:
     net.cloudcentrik.dagenslunch: INFO
+    # Redirects SQL logs to a separate file
+    org.hibernate.SQL:
+      level: INFO
   appenders:
     - type: console
     - type: file
       threshold: INFO
-      #logFormat: %h %l %u [%t] "%r" %s %b "%i{Referer}" "%i{User-Agent}"
-      #logFormat: "%-6level [%d{HH:mm:ss.SSS}] [%h] [%t] %logger{5} - %i{User-Agent} %n"
-      #logFormat: "%-6level [%d{HH:mm:ss.SSS}] [%t] %logger{5} - %X{code} %msg %n"
-      logFormat: "[%d{HH:mm:ss.SSS}] [%t] %logger{5} - %X{code} %n"
+      logFormat: "%-6level [%d{HH:mm:ss.SSS}] [%t] %logger{5} - %X{code} %msg %n"
       currentLogFilename: /tmp/dagenslunch-server.log
       archivedLogFilenamePattern: /tmp/dagenslunch-server-%d{yyyy-MM-dd}-%i.log.gz
       archivedFileCount: 7
       timeZone: UTC
       maxFileSize: 1MB
+      
+# the key needs to match the suffix of the renderer
+  
      
 #commandline commands
 #data migration

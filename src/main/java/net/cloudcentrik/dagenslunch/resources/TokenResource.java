@@ -26,6 +26,7 @@ public class TokenResource {
 
     public TokenResource(TokenDAO tokenDAO) {
         this.tokenDAO = tokenDAO;
+  
     }
     
     /*

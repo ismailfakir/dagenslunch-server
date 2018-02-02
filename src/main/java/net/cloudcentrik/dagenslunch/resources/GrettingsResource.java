@@ -13,7 +13,7 @@ import net.cloudcentrik.dagenslunch.api.Grettings;
 
 import com.codahale.metrics.annotation.Timed;
 
-@Path("/")
+@Path("/info")
 @Produces(MediaType.APPLICATION_JSON)
 public class GrettingsResource {
 

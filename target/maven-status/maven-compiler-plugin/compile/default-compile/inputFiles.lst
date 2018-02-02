@@ -4,8 +4,10 @@
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/core/Token.java
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/db/RestaurantDAO.java
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/db/TokenDAO.java
+/home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/resources/PersonResource.java
+/home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/views/PersonView.java
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/auth/DagenslunchAuthenticator.java
-/home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/auth/AppBasicAuthenticator.java
+/home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/views/LoginView.java
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/resources/RestaurantResource.java
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/api/Grettings.java
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/core/RetaurantBasicResult.java
@@ -19,9 +21,10 @@
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/resources/TokenResource.java
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/core/TokenUser.java
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/core/People.java
-/home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/auth/AppAuthorizer.java
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/core/Template.java
+/home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/resources/IndexResource.java
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/resources/GrettingsResource.java
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/core/User.java
+/home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/views/IndexView.java
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/resources/PeopleResource.java
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/auth/DagenslunchAuthenticateFilter.java

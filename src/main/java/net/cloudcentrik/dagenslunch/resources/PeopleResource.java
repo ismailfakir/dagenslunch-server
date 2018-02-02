@@ -17,7 +17,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 import java.util.Optional;
 
-//@DagenslunchAuthenticator
+@DagenslunchAuthenticator
 @Path("/people")
 @Produces(MediaType.APPLICATION_JSON)
 public class PeopleResource {
