@@ -38,6 +38,11 @@ server:
   connector:
     type: http
     port: 8989
+    type: https
+    port: 9090
+    keyStorePath: dagenslunch.keystore
+    keyStorePassword: dhaka_1971
+    validateCerts: false
     
 
 # Logging settings.

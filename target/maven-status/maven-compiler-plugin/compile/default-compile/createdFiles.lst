@@ -2,6 +2,7 @@ net/cloudcentrik/dagenslunch/views/LoginView.class
 net/cloudcentrik/dagenslunch/resources/TokenResource.class
 net/cloudcentrik/dagenslunch/core/User.class
 net/cloudcentrik/dagenslunch/auth/DagenslunchAuthenticateFilter.class
+net/cloudcentrik/dagenslunch/views/RestaurantsView.class
 net/cloudcentrik/dagenslunch/api/Grettings.class
 net/cloudcentrik/dagenslunch/DagenslunchApplication$1.class
 net/cloudcentrik/dagenslunch/DagenslunchConfiguration.class
@@ -23,6 +24,7 @@ net/cloudcentrik/dagenslunch/health/TemplateHealthCheck.class
 net/cloudcentrik/dagenslunch/core/People.class
 net/cloudcentrik/dagenslunch/db/PeopleDAO.class
 net/cloudcentrik/dagenslunch/views/PersonView.class
+net/cloudcentrik/dagenslunch/utils/DagenslunchUtils.class
 net/cloudcentrik/dagenslunch/utils/AuthenticationUtils.class
 net/cloudcentrik/dagenslunch/views/IndexView.class
 net/cloudcentrik/dagenslunch/core/TokenUser.class
