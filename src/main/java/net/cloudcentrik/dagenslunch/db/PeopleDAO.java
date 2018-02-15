@@ -20,7 +20,7 @@ public class PeopleDAO extends AbstractDAO<People> {
     }
     
     public People findByLongId(Long id) {
-        return (People) currentSession().get(People.class, id);
+        return currentSession().get(People.class, id);
     }
 
     public People create(People person) {

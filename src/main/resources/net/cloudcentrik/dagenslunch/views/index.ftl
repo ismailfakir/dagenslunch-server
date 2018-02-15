@@ -41,7 +41,7 @@
         </button>
 
         <a class="navbar-brand logo" href="/public/index.html">
-            <img src="assets/img/dagenslunch-logo.png" alt="Dagenslunch Server">
+            <img src="/public/assets/img/dagenslunch-logo.png" alt="Dagenslunch Server">
         </a>
 
     </nav>

@@ -9,9 +9,13 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
-import net.cloudcentrik.dagenslunch.api.Grettings;
-
 import com.codahale.metrics.annotation.Timed;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponses;
+import net.cloudcentrik.dagenslunch.api.Grettings;
+import io.swagger.annotations.ApiResponse;
 
 @Path("/info")
 @Produces(MediaType.APPLICATION_JSON)
@@ -23,7 +27,8 @@ public class GrettingsResource {
 	
 	@GET
     @Timed
-    public Grettings sendGrettings(@Context HttpServletRequest req) {
+    
+	public Grettings sendGrettings(@Context HttpServletRequest req) {
 		final HashMap<String,String> serverInfo=new HashMap<String,String>();
 		serverInfo.put("SERVER","dagenslunch");
 		serverInfo.put("VERSION","1.0");

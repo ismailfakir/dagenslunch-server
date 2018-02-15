@@ -30,7 +30,7 @@ public class TokenDAO extends AbstractDAO<Token>{
     }
     
     public Token findByLongId(Long id) {
-        return (Token) currentSession().get(Token.class, id);
+        return currentSession().get(Token.class, id);
     }
 
     public Token create(Token token) {

@@ -15,12 +15,20 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import io.dropwizard.hibernate.UnitOfWork;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import net.cloudcentrik.dagenslunch.auth.DagenslunchCredential;
+
 import net.cloudcentrik.dagenslunch.core.Restaurant;
 import net.cloudcentrik.dagenslunch.core.RetaurantBasicResult;
 import net.cloudcentrik.dagenslunch.db.RestaurantDAO;
 
+
 @Path("/restaurant")
+@Api(value = "/restaurant")
 @Produces(MediaType.APPLICATION_JSON)
 public class RestaurantResource {
 	
@@ -32,12 +40,20 @@ public class RestaurantResource {
 
     @POST
     @UnitOfWork
-    public Restaurant createPerson(Restaurant restaurant) {
+    @ApiOperation(value = "Add a new Restaurant")
+    @ApiResponses(value = { @ApiResponse(code = 405, message = "Invalid input") })
+    public Restaurant createPerson(
+    		@ApiParam(value = "Restaurant object that needs to be added to database", required = true)Restaurant restaurant) {
         return restaurantDAO.create(restaurant);
     }
 
     @GET
     @UnitOfWork
+    @ApiOperation(
+            value = "Find all restaurant",
+            notes = "Returns list of Restaurant",
+            response = Restaurant.class,
+            responseContainer = "List")
     public List<Restaurant> listRestaurant() {
         return restaurantDAO.findAll();
     }
@@ -53,7 +69,17 @@ public class RestaurantResource {
     @GET
     @Path("/{id}")
     @UnitOfWork
-    public Optional<Restaurant> get(@PathParam("id") int id){
+    /*swagger annotation start*/
+    @ApiOperation(value = "Get a Restaurant by id")
+    @ApiResponses(value = { 
+    		@ApiResponse(code = 400, message = "Error Occurred while getting data"),
+    		@ApiResponse(code = 404, message = "Restaurant not found"),
+    		@ApiResponse(code = 405, message = "Validation exception") 
+    })
+    /*swagger annotation end*/
+    public Optional<Restaurant> get(
+    		@ApiParam(value = "Restaurant id", required = true)//swagger annotation
+    		@PathParam("id") int id){
         return restaurantDAO.findById(id);
     }
     
@@ -73,5 +99,9 @@ public class RestaurantResource {
     public void delete(@PathParam("id") int id) {
     	restaurantDAO.delete(restaurantDAO.findByIntId(id));
     }
-
 }
+
+
+     
+
+

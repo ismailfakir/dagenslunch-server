@@ -10,6 +10,7 @@ net/cloudcentrik/dagenslunch/DagenslunchApplication.class
 net/cloudcentrik/dagenslunch/auth/DagenslunchAuthenticator.class
 net/cloudcentrik/dagenslunch/core/Template.class
 net/cloudcentrik/dagenslunch/core/Restaurant.class
+net/cloudcentrik/dagenslunch/DagenslunchApplication$3.class
 net/cloudcentrik/dagenslunch/resources/IndexResource.class
 net/cloudcentrik/dagenslunch/DagenslunchApplication$2.class
 net/cloudcentrik/dagenslunch/client/OAuthForWooCommerce.class
@@ -21,6 +22,7 @@ net/cloudcentrik/dagenslunch/resources/PeopleResource.class
 net/cloudcentrik/dagenslunch/client/RestClientExample.class
 net/cloudcentrik/dagenslunch/resources/RestaurantResource.class
 net/cloudcentrik/dagenslunch/health/TemplateHealthCheck.class
+net/cloudcentrik/dagenslunch/example/SwaggerExample.class
 net/cloudcentrik/dagenslunch/core/People.class
 net/cloudcentrik/dagenslunch/db/PeopleDAO.class
 net/cloudcentrik/dagenslunch/views/PersonView.class

@@ -6,11 +6,13 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import io.swagger.annotations.Api;
 import net.cloudcentrik.dagenslunch.core.People;
 import net.cloudcentrik.dagenslunch.db.PeopleDAO;
 import net.cloudcentrik.dagenslunch.views.PersonView;
 
 @Path("/people/{id}")
+@Api(value = "/people")
 @Produces(MediaType.TEXT_HTML)
 public class PersonResource {
     private final PeopleDAO dao;

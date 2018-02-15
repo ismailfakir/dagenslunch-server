@@ -13,12 +13,14 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import io.dropwizard.hibernate.UnitOfWork;
+import io.swagger.annotations.Api;
 import net.cloudcentrik.dagenslunch.auth.DagenslunchAuthenticator;
 import net.cloudcentrik.dagenslunch.core.Token;
 import net.cloudcentrik.dagenslunch.db.TokenDAO;
 import net.cloudcentrik.dagenslunch.utils.AuthenticationUtils;
 
 @Path("/token")
+@Api(value = "/token")
 @Produces(MediaType.APPLICATION_JSON)
 public class TokenResource {
 	

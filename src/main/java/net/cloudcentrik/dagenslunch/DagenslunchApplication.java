@@ -36,6 +36,8 @@ import io.dropwizard.migrations.MigrationsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import io.dropwizard.views.ViewBundle;
+import io.federecio.dropwizard.swagger.SwaggerBundle;
+import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 
 public class DagenslunchApplication extends Application<DagenslunchConfiguration> {
 	public static void main(String[] args) throws Exception {
@@ -81,6 +83,14 @@ public class DagenslunchApplication extends Application<DagenslunchConfiguration
 	    
 	    /* form */
 	    bootstrap.addBundle(new MultiPartBundle());
+	    
+	    /**/
+	    bootstrap.addBundle(new SwaggerBundle<DagenslunchConfiguration>() {
+	        @Override
+	        protected SwaggerBundleConfiguration getSwaggerBundleConfiguration(DagenslunchConfiguration configuration) {
+	            return configuration.swaggerBundleConfiguration;
+	        }
+	    });
 	
 	}
 

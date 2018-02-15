@@ -2,6 +2,7 @@ package net.cloudcentrik.dagenslunch;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.Configuration;
 import io.dropwizard.db.DataSourceFactory;
+import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 import net.cloudcentrik.dagenslunch.core.Template;
 
 import javax.validation.Valid;
@@ -60,5 +61,9 @@ public class DagenslunchConfiguration extends Configuration {
     public void setDataSourceFactory(DataSourceFactory dataSourceFactory) {
         this.database = dataSourceFactory;
     }
+    
+    @JsonProperty("swagger")
+    public SwaggerBundleConfiguration swaggerBundleConfiguration;
+    
 
 }

@@ -5,6 +5,7 @@
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/db/RestaurantDAO.java
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/db/TokenDAO.java
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/resources/PersonResource.java
+/home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/example/SwaggerExample.java
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/views/PersonView.java
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/auth/DagenslunchAuthenticator.java
 /home/ismail/my_project/cloudcentrik/dagenslunch-server/src/main/java/net/cloudcentrik/dagenslunch/views/LoginView.java

@@ -21,7 +21,7 @@ public class RestaurantDAO extends AbstractDAO<Restaurant>{
     }
     
     public Restaurant findByIntId(int id) {
-        return (Restaurant) currentSession().get(Restaurant.class, id);
+        return currentSession().get(Restaurant.class, id);
     }
 
     public Restaurant create(Restaurant restaurant) {

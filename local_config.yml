@@ -64,6 +64,19 @@ logging:
       timeZone: UTC
       maxFileSize: 1MB
       
+#swagger configuration
+swagger:
+  resourcePackage: net.cloudcentrik.dagenslunch.resources
+  title: Dagenslunch API
+  version: v1
+  description: Dagenslunch restful API service
+  contact: Ismail Fakir
+  contactEmail: ismail.fakir@cloudcentrik.net
+  contactUrl: http://www.cloudcentrik.net
+  host: https://dagens-lunch-v1.herokuapp.com/
+  basePath: /v1
+  schemes: 
+    - https
 # the key needs to match the suffix of the renderer
   
      

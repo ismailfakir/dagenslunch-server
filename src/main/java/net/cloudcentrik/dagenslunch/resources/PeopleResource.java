@@ -4,6 +4,7 @@ import net.cloudcentrik.dagenslunch.auth.DagenslunchAuthenticator;
 import net.cloudcentrik.dagenslunch.core.People;
 import net.cloudcentrik.dagenslunch.db.PeopleDAO;
 import io.dropwizard.hibernate.UnitOfWork;
+import io.swagger.annotations.Api;
 
 import javax.validation.Valid;
 import javax.ws.rs.DELETE;
@@ -19,6 +20,7 @@ import java.util.Optional;
 
 @DagenslunchAuthenticator
 @Path("/people")
+@Api(value = "/people")
 @Produces(MediaType.APPLICATION_JSON)
 public class PeopleResource {
 
